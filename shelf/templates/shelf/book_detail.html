@@ -1,9 +1,20 @@
 {% extends "base.html" %}
+{% load shelf_tags %}
 
-{% block 'content' %}
+{% block content %}
 
-<div><a href={% url 'shelf:book-list' %}">Powrót do listy książek</a></div>
+<div><a href=""{% url 'shelf:book-list' %}">Powrót do listy książek</a></div>
 
 <h1>{{ object.title }}</h1>
+
+<h2>Wydania:</h2>
+
+{% show_editions object %}
+
+{% comment %}
+<ul>{% for edition in book.bookedition_set.all %}
+<li>{{ edition.date|pub_date}} - {{ edition.publisher.name }}</li>
+{% endfor %}</ul>
+{% endcomment %}
 
 {% endblock %}

@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Author, Publisher, Book, BookCategory
+from .models import Author, Publisher, Book, BookCategory, BookEdition, BookItem
 
 
 class AuthorAdmin(admin.ModelAdmin):
@@ -19,3 +19,5 @@ admin.site.register(Author, AuthorAdmin)
 admin.site.register(Book, BookAdmin)
 admin.site.register(Publisher)
 admin.site.register(BookCategory)
+admin.site.register(BookEdition)
+admin.site.register(BookItem)
